@@ -47,6 +47,7 @@
 	<modules>
 		<module>json-common</module>
 		<module>json-to-map</module>
+		<module>json-to-row</module>
 	</modules>
 
     <properties>
