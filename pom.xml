@@ -45,6 +45,7 @@
     </distributionManagement>
 
 	<modules>
+		<module>json-common</module>
 		<module>json-to-map</module>
 	</modules>
 
@@ -66,24 +67,36 @@
             <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Test dependency -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-		<!-- Dependency for defining functions -->
+		<!-- UDF dependency -->
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-common</artifactId>
 			<version>${flink.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Test dependency -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-test-utils-junit</artifactId>
+			<version>${flink.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
     </dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- flink-format-common -->
+			<dependency>
+				<groupId>org.apache.flink</groupId>
+				<artifactId>flink-format-common</artifactId>
+				<version>${flink.version}</version>
+			</dependency>
 			<!-- Flink Json -->
 			<dependency>
 				<groupId>org.apache.flink</groupId>
