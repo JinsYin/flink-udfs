@@ -25,3 +25,6 @@ replay_pid*
 
 # Intellij IDEA
 .idea/
+
+# target directory
+target/
