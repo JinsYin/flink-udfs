@@ -19,9 +19,9 @@ public class JsonToMap extends ScalarFunction {
 
     /**
      * Convert a json to a map
-     *
      * <p>Notes: Nested maps are not supported
-     * {@see org.apache.flink.table.runtime.functions.SqlFunctionUtils#strToMap(String)}
+     * <p>see `org.apache.flink.table.runtime.functions.SqlFunctionUtils#strToMap(String)`
+     *
      * @param json a json string
      * @return DataTypes.MAP(DataTypes.STRING(), DataTypes.STRING())
      */
@@ -42,15 +42,18 @@ public class JsonToMap extends ScalarFunction {
      * TODO: Nested Map and User Defined Map
      *
      * Usage:
-     * - JsonToMap(column, 'MAP<STRING,STRING>')
-     * - JsonToMap(column, 'MAP<STRING,INT>')
-     * - JsonToMap(column, 'MAP<STRING, MAP<STRING,INT>>')
-     * - JsonToMap(column, 'MAP<STRING, ROW<x STRING,y INT>>') - not supported
+     * <pre>
+     * SELECT JSON_TO_MAP(column, 'MAP&lt;STRING,STRING&gt;');
+     * SELECT JSON_TO_MAP(column, 'MAP&lt;STRING,INT&gt;');
+     * SELECT JSON_TO_MAP(column, 'MAP&lt;STRING, MAP&lt;STRING,INT&gt;&gt;');
+     * SELECT JSON_TO_MAP(column, 'MAP&lt;STRING, ROW&lt;x STRING,y INT&gt;&gt;'); -- not supported
+     * </pre>
      *
      * @param nestedJson a nested json string
+     * @param typeDesc type description
      * @return a nested map
      */
-    public Map<String, Object> eval(String nestedJson, String typeDesc) throws JsonProcessingException {
+    public Map<String, Object> eval(String nestedJson, String typeDesc) {
         throw new UnsupportedOperationException("Unsupported conversion");
     }
 
