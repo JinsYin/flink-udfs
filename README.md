@@ -1,6 +1,6 @@
 # flink-udfs
 
-User-defined functions for the Flink.
+User-Defined Functions for the Flink.
 
 [![Website][website-image]][website-href] 
 [![License][license-image]](LICENSE)
@@ -16,3 +16,10 @@ User-defined functions for the Flink.
 [cn-doc-image]: https://img.shields.io/badge/文档-中文-blue.svg?style=socialflat-square
 [star-image]: https://starchart.cc/jinsyin/flink-udfs.svg
 [star-href]: https://starchart.cc/jinsyin/flink-udfs
+
+## UDFs
+
+| UDF                                  | Description                                              |
+|--------------------------------------|----------------------------------------------------------|
+| [json-to-map](json-to-map/README.md) | Convert a JSON string to the `MAP<STRING,STRING>` object |
+

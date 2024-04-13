@@ -17,3 +17,8 @@
 [star-image]: https://starchart.cc/jinsyin/flink-udfs.svg
 [star-href]: https://starchart.cc/jinsyin/flink-udfs
 
+## UDFs
+
+| UDF                                  | 描述                              |
+|--------------------------------------|---------------------------------|
+| [json-to-map](json-to-map/README.md) | JSON 字符串转为 `MAP<STRING,STRING>` |
